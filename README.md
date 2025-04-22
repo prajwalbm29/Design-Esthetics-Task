@@ -66,7 +66,7 @@ cd Design-Esthetics-Task
 
 ---
 
-🧑‍💻 Admin Test Credentials
+## 🧑‍💻 Admin Test Credentials
 You can use the following credentials for admin access (provided for testing purposes):
 
 Admin Email: bmprajwal43@gmail.com
