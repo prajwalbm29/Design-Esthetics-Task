@@ -64,6 +64,8 @@ cd Design-Esthetics-Task
 - Start frontend
 - npm run dev
 
+---
+
 🧑‍💻 Admin Test Credentials
 You can use the following credentials for admin access (provided for testing purposes):
 
