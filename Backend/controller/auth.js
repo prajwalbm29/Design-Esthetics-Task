@@ -1,7 +1,7 @@
 const userModel = require('../model/user');
 const otpModel = require('../model/otp')
 const fs = require('fs');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const JWT = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 
