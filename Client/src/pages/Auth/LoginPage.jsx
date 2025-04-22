@@ -6,13 +6,17 @@ import { AuthContext } from '../../context/AuthContext';
 
 const LoginPage = () => {
   const { login } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  if (loading) {
+    return <LoginPage />
+  }
 
   const handleChange = (e) => {
     setFormData({

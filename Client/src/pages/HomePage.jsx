@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Layout/Header';
+import { AuthContext } from '../context/AuthContext';
+import toast from 'react-hot-toast';
 
 const HomePage = () => {
+  const {isAuthenticated} = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const handleGetStarted = async () => {
+    const authRes = await isAuthenticated();
+    if (!authRes) {
+      navigate("/register");
+      return;
+    }
+    toast.success("You alredy registered.");
+  }
 
   return (
     <>
@@ -24,7 +36,7 @@ const HomePage = () => {
                 </p>
                 <div className="flex gap-4 pt-4">
                   <button 
-                    onClick={() => navigate('/register')}
+                    onClick={handleGetStarted}
                     className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-medium transition"
                   >
                     Get Started

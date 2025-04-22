@@ -1,10 +1,12 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import LoadingPage from "../pages/LoadingPage";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+    const [loading, setLoading] = useState(true);
     const [auth, setAuth] = useState({
         user: null,
         token: '',
@@ -12,7 +14,7 @@ export const AuthProvider = ({ children }) => {
     });
 
     // Set axios defaults
-    axios.defaults.baseURL = "http://localhost:8080";
+    axios.defaults.baseURL = "https://design-esthetics-task-1.onrender.com";
 
     // Initialize auth state from localStorage
     const initializeAuth = () => {
@@ -29,14 +31,21 @@ export const AuthProvider = ({ children }) => {
             } catch (error) {
                 console.error("Failed to parse auth data:", error);
                 localStorage.removeItem("auth");
+            } finally {
+                setLoading(false);
             }
         } else {
             delete axios.defaults.headers.common['Authorization'];
+            setLoading(false);
         }
     };
     useEffect(() => {
         initializeAuth();
     }, []);
+
+    if (loading) {
+        return <LoadingPage />
+    }
 
     // Login function
     const login = async (formData) => {

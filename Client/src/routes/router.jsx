@@ -16,6 +16,11 @@ import AdminProfile from '../pages/Admin/AdminProfile';
 
 const router = createBrowserRouter([
     {
+        path: "/",
+        element: <HomePage />,
+        errorElement: <ErrorPage />,
+    },
+    {
         path: "/login",
         element: <LoginPage />,
         errorElement: <ErrorPage />,
@@ -23,11 +28,6 @@ const router = createBrowserRouter([
     {
         path: "/register",
         element: <RegisterPage />,
-        errorElement: <ErrorPage />,
-    },
-    {
-        path: "/",
-        element: <HomePage />,
         errorElement: <ErrorPage />,
     },
     {

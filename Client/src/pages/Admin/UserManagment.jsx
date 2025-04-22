@@ -3,6 +3,7 @@ import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { BASE_URL } from '../../constants/baseUrl';
+import LoadingPage from '../LoadingPage';
 
 const UserManagement = () => {
   const { auth } = useContext(AuthContext);
@@ -109,7 +110,9 @@ const UserManagement = () => {
       </div>
 
       {loading ? (
-        <div className="text-center py-8">Loading users...</div>
+        <div className="text-center">
+          <LoadingPage />
+        </div>
       ) : (
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
           <div className="overflow-x-auto">
