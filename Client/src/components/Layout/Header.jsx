@@ -20,11 +20,11 @@ const Header = () => {
 
     const handleDashboardClick = async (isMobile = false) => {
         closeMobileMenu();
-        
+
         try {
             setIsCheckingAdmin(true);
             const adminStatus = await isAdmin();
-            
+
             if (adminStatus) {
                 navigate("/admin");
             } else {
@@ -49,6 +49,7 @@ const Header = () => {
                     {/* Logo */}
                     <div className="flex-shrink-0">
                         <Link
+                            style={{ textDecoration: 'none' }}
                             to="/"
                             className="flex items-center text-yellow-400 hover:text-yellow-300 font-bold text-2xl no-underline gap-4"
                             aria-label="Home"
@@ -63,11 +64,11 @@ const Header = () => {
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-center space-x-6">
                             <NavLink
+                                style={{ textDecoration: 'none' }}
                                 to="/"
                                 onClick={closeMobileMenu}
                                 className={({ isActive }) =>
-                                    `px-4 py-3 rounded-md text-lg font-medium no-underline ${
-                                        isActive ? 'bg-gray-800 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                                    `px-4 py-3 rounded-md text-lg font-medium no-underline ${isActive ? 'bg-gray-800 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700'
                                     }`
                                 }
                                 end
@@ -78,22 +79,22 @@ const Header = () => {
                             {!auth?.user ? (
                                 <>
                                     <NavLink
+                                        style={{ textDecoration: 'none' }}
                                         to="/register"
                                         onClick={closeMobileMenu}
                                         className={({ isActive }) =>
-                                            `px-4 py-3 rounded-md text-lg font-medium no-underline ${
-                                                isActive ? 'bg-gray-800 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                                            `px-4 py-3 rounded-md text-lg font-medium no-underline ${isActive ? 'bg-gray-800 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700'
                                             }`
                                         }
                                     >
                                         Register
                                     </NavLink>
                                     <NavLink
+                                        style={{ textDecoration: 'none' }}
                                         to="/login"
                                         onClick={closeMobileMenu}
                                         className={({ isActive }) =>
-                                            `px-4 py-3 rounded-md text-lg font-medium no-underline ${
-                                                isActive ? 'bg-gray-800 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                                            `px-4 py-3 rounded-md text-lg font-medium no-underline ${isActive ? 'bg-gray-800 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700'
                                             }`
                                         }
                                     >
@@ -109,11 +110,11 @@ const Header = () => {
                                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                                             >
                                                 <span className="sr-only">Open user menu</span>
-                                                <img 
-                                                    src={`${BASE_URL}/api/v1/auth/user-photo/${auth?.user?._id}`} 
-                                                    alt="Profile" 
-                                                    width={40} 
-                                                    className="rounded-full" 
+                                                <img
+                                                    src={`${BASE_URL}/api/v1/auth/user-photo/${auth?.user?._id}`}
+                                                    alt="Profile"
+                                                    width={40}
+                                                    className="rounded-full"
                                                 />
                                                 <span className="ml-3 text-gray-300 hover:text-white text-lg">
                                                     {auth?.user?.name || "Account"}
@@ -170,11 +171,11 @@ const Header = () => {
                     <div className="md:hidden">
                         <div className="px-2 pt-2 pb-3 space-y-2 sm:px-3">
                             <NavLink
+                                style={{ textDecoration: 'none' }}
                                 to="/"
                                 onClick={closeMobileMenu}
                                 className={({ isActive }) =>
-                                    `block px-4 py-3 rounded-md text-xl font-medium no-underline ${
-                                        isActive ? 'bg-gray-800 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                                    `block px-4 py-3 rounded-md text-xl font-medium no-underline ${isActive ? 'bg-gray-800 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700'
                                     }`
                                 }
                                 end
@@ -185,11 +186,11 @@ const Header = () => {
                             {!auth?.user ? (
                                 <>
                                     <NavLink
+                                        style={{ textDecoration: 'none' }}
                                         to="/register"
                                         onClick={closeMobileMenu}
                                         className={({ isActive }) =>
-                                            `block px-4 py-3 rounded-md text-xl font-medium no-underline ${
-                                                isActive ? 'bg-gray-800 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                                            `block px-4 py-3 rounded-md text-xl font-medium no-underline ${isActive ? 'bg-gray-800 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700'
                                             }`
                                         }
                                     >
@@ -199,8 +200,7 @@ const Header = () => {
                                         to="/login"
                                         onClick={closeMobileMenu}
                                         className={({ isActive }) =>
-                                            `block px-4 py-3 rounded-md text-xl font-medium no-underline ${
-                                                isActive ? 'bg-gray-800 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                                            `block px-4 py-3 rounded-md text-xl font-medium no-underline ${isActive ? 'bg-gray-800 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-700'
                                             }`
                                         }
                                     >
