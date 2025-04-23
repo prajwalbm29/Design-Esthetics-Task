@@ -14,10 +14,6 @@ const LoginPage = () => {
   });
   const navigate = useNavigate();
 
-  if (loading) {
-    return <LoginPage />
-  }
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
