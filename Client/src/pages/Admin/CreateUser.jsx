@@ -61,7 +61,7 @@ const CreateUser = () => {
 
       if (res.data.success) {
         toast.success('Registration successful!');
-        navigate('/login');
+        navigate('/admin/user-management');
       }
     } catch (error) {
       console.error(error);
