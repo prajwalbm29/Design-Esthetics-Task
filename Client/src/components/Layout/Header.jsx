@@ -197,6 +197,7 @@ const Header = () => {
                                         Register
                                     </NavLink>
                                     <NavLink
+                                        style={{ textDecoration: 'none' }}
                                         to="/login"
                                         onClick={closeMobileMenu}
                                         className={({ isActive }) =>
